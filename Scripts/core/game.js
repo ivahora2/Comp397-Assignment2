@@ -11,11 +11,11 @@
     var Manifest = [
         { id: "StartButton", src: "/Assets/images/StartButton.png" },
         { id: "RestartButton", src: "/Assets/images/RestartButton.png" },
-        { id: "player", src: "/Assets/images/plane.png" },
-        { id: "background", src: "/Assets/images/ocean.gif" },
+        { id: "player", src: "/Assets/images/minion.png" },
+        { id: "background", src: "/Assets/images/background.jpg" },
         { id: "lifeline", src: "/Assets/images/island.png" },
         { id: "Bullet", src: "/Assets/images/bullet.png" },
-        { id: "enemy", src: "/Assets/images/cloud.png" },
+        { id: "enemy", src: "/Assets/images/min_1.png" },
         { id: "yay", src: "/Assets/audio/yay.ogg" },
         { id: "thunder", src: "/Assets/audio/thunder.ogg" },
         { id: "engine", src: "/Assets/audio/engine.ogg" }

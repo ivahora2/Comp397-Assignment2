@@ -16,14 +16,14 @@ namespace objects {
     // private methods
     private _checkBounds(): void {
       // check top boundary
-      if (this.x >= 0) {
+      if (this.x <=-((config.Screen.WIDTH)*2)) {
         this.Reset();
       }
     }
 
     // public methods
     public Start(): void {
-      this._horizontalSpeed = 2; // 5 pixels per frame
+      this._horizontalSpeed = -5; // 5 pixels per frame
       this.Reset();
     }
 
@@ -33,7 +33,7 @@ namespace objects {
     }
 
     public Reset(): void {
-      this.x =-(config.Screen.WIDTH * 2);
+      this.x =0;
     }
   }
 }

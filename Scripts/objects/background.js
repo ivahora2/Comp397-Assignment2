@@ -24,13 +24,13 @@ var objects;
         // private methods
         Background.prototype._checkBounds = function () {
             // check top boundary
-            if (this.x >= 0) {
+            if (this.x <= -((config.Screen.WIDTH) * 2)) {
                 this.Reset();
             }
         };
         // public methods
         Background.prototype.Start = function () {
-            this._horizontalSpeed = 2; // 5 pixels per frame
+            this._horizontalSpeed = -5; // 5 pixels per frame
             this.Reset();
         };
         Background.prototype.Update = function () {
@@ -38,7 +38,7 @@ var objects;
             this._checkBounds();
         };
         Background.prototype.Reset = function () {
-            this.x = -(config.Screen.WIDTH * 2);
+            this.x = 0;
         };
         return Background;
     }(createjs.Bitmap));

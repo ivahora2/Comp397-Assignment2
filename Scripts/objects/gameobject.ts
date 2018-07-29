@@ -1,7 +1,12 @@
 module objects {
     export abstract class GameObject extends createjs.Bitmap {
         // member variables
+        protected _dx:number;
+        protected _dy:number;
+
+
         public width:number;
+        
         public height:number;
         public halfWidth:number;
         public halfHeight:number;

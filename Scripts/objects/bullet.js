@@ -12,36 +12,27 @@ var objects;
 (function (objects) {
     var Bullet = /** @class */ (function (_super) {
         __extends(Bullet, _super);
-        /**
-         * Creates an instance of Cloud.
-         * @memberof Cloud
-         */
         function Bullet() {
             var _this = _super.call(this, "Bullet") || this;
             _this.Start();
             return _this;
         }
-        // private methods
-        Bullet.prototype._checkBounds = function () {
-            // check bottom boundary
-            if (this.x > config.Screen.WIDTH) {
-                this.Reset();
-            }
-        };
-        // public methods
         Bullet.prototype.Start = function () {
-            this.regX = this.halfWidth;
-            this.regY = this.halfHeight;
-            this.Reset();
+            this._dx = 10;
+            this._dy = 0;
         };
         Bullet.prototype.Update = function () {
-            this.x -= this._horizontalSpeed;
-            this._checkBounds();
+            this.y += this._dx;
+            this.CheckBounds();
         };
         Bullet.prototype.Reset = function () {
-            this._horizontalSpeed = Math.floor((Math.random() * 5) + 1); // between -2 and 2 ppf
-            this.x = config.Screen.WIDTH;
-            this.y = Math.floor((Math.random() * (config.Screen.HEIGHT - this.height)) + this.halfHeight);
+        };
+        Bullet.prototype.Maint = function () {
+        };
+        Bullet.prototype.CheckBounds = function () {
+            if (this.x >= this.width) {
+                this.Reset();
+            }
         };
         return Bullet;
     }(objects.GameObject));
