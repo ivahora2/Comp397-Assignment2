@@ -43,7 +43,7 @@
         createjs.Ticker.framerate = 60; // sets framerate to 60fps
         createjs.Ticker.on("tick", Update);
 
-        CurrentState = config.Scene.START;
+        CurrentState = config.Scene.MENU;
         managers.Game.CurrentState = CurrentState;
 
         ScoreBoard = new managers.ScoreBoard;
@@ -73,6 +73,18 @@
         }
     
         switch(CurrentState) {
+            case config.Scene.MENU:
+            CurrentScene = new scenes.Menu();
+            break;
+
+            case config.Scene.INFO:
+            CurrentScene = new scenes.Info();
+            break;
+
+            case config.Scene.LEVEL:
+            CurrentScene = new scenes.PLayLevelUp();
+            break;
+
             case config.Scene.START:
             CurrentScene = new scenes.Start();
             break;

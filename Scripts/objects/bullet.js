@@ -24,7 +24,7 @@ var objects;
         // private methods
         Bullet.prototype._checkBounds = function () {
             // check bottom boundary
-            if (this.x < -this.width || this.y > config.Screen.HEIGHT + this.height) {
+            if (this.x > config.Screen.WIDTH) {
                 this.Reset();
             }
         };

@@ -1,10 +1,10 @@
 module scenes {
-    export class Start extends objects.Scene {
+    export class Menu extends objects.Scene {
         // member variables
         private _welcomeLabel: objects.Label;
         private _startButton: objects.Button;
-        private _startButton2: objects.Button;
-        private _ocean: objects.Background;
+        private _infoButton:objects.Button;
+        private _background: objects.Background;
 
         // constructors
         constructor() {
@@ -18,17 +18,16 @@ module scenes {
         // public methods
         public Start():void {
 
-            this._ocean = new objects.Background();
-
+            this._background = new objects.Background();
+            this._infoButton = new objects.Button("StartButton",200,200,true);
             this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Consolas", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
-            this._startButton2 = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 400, true);
 
             this.Main();
         }
 
         public Update():void {
-            this._ocean.Update();
+            this._background.Update();
         }
 
         public Reset():void {
@@ -41,18 +40,17 @@ module scenes {
 
         public Main():void {
             console.log(`Starting - START SCENE`);
-            this.addChild(this._ocean);
-
+            this.addChild(this._background);
+            this.addChild(this._infoButton);
             this.addChild(this._welcomeLabel);
             this.addChild(this._startButton);
-            this.addChild(this._startButton2);
 
             this._startButton.on("click", function(){
-                managers.Game.CurrentState = config.Scene.PLAY;
+                managers.Game.CurrentState = config.Scene.START;
             }, this);
 
-            this._startButton2.on("click", function(){
-                managers.Game.CurrentState = config.Scene.LEVEL;
+            this._infoButton.on("click", function(){
+                managers.Game.CurrentState = config.Scene.INFO;
             }, this);
         }
     }

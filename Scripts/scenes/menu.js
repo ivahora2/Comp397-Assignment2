@@ -10,46 +10,46 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var scenes;
 (function (scenes) {
-    var Start = /** @class */ (function (_super) {
-        __extends(Start, _super);
+    var Menu = /** @class */ (function (_super) {
+        __extends(Menu, _super);
         // constructors
-        function Start() {
+        function Menu() {
             var _this = _super.call(this) || this;
             _this.Start();
             return _this;
         }
         // private methods
         // public methods
-        Start.prototype.Start = function () {
-            this._ocean = new objects.Background();
+        Menu.prototype.Start = function () {
+            this._background = new objects.Background();
+            this._infoButton = new objects.Button("StartButton", 200, 200, true);
             this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Consolas", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
             this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
-            this._startButton2 = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 400, true);
             this.Main();
         };
-        Start.prototype.Update = function () {
-            this._ocean.Update();
+        Menu.prototype.Update = function () {
+            this._background.Update();
         };
-        Start.prototype.Reset = function () {
+        Menu.prototype.Reset = function () {
         };
-        Start.prototype.Destroy = function () {
+        Menu.prototype.Destroy = function () {
             this.removeAllChildren();
         };
-        Start.prototype.Main = function () {
+        Menu.prototype.Main = function () {
             console.log("Starting - START SCENE");
-            this.addChild(this._ocean);
+            this.addChild(this._background);
+            this.addChild(this._infoButton);
             this.addChild(this._welcomeLabel);
             this.addChild(this._startButton);
-            this.addChild(this._startButton2);
             this._startButton.on("click", function () {
-                managers.Game.CurrentState = config.Scene.PLAY;
+                managers.Game.CurrentState = config.Scene.START;
             }, this);
-            this._startButton2.on("click", function () {
-                managers.Game.CurrentState = config.Scene.LEVEL;
+            this._infoButton.on("click", function () {
+                managers.Game.CurrentState = config.Scene.INFO;
             }, this);
         };
-        return Start;
+        return Menu;
     }(objects.Scene));
-    scenes.Start = Start;
+    scenes.Menu = Menu;
 })(scenes || (scenes = {}));
-//# sourceMappingURL=start.js.map
+//# sourceMappingURL=menu.js.map

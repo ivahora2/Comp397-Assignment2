@@ -2,9 +2,12 @@ var config;
 (function (config) {
     var Scene;
     (function (Scene) {
-        Scene[Scene["START"] = 0] = "START";
-        Scene[Scene["PLAY"] = 1] = "PLAY";
-        Scene[Scene["END"] = 2] = "END";
+        Scene[Scene["MENU"] = 0] = "MENU";
+        Scene[Scene["INFO"] = 1] = "INFO";
+        Scene[Scene["LEVEL"] = 2] = "LEVEL";
+        Scene[Scene["START"] = 3] = "START";
+        Scene[Scene["PLAY"] = 4] = "PLAY";
+        Scene[Scene["END"] = 5] = "END";
     })(Scene = config.Scene || (config.Scene = {}));
 })(config || (config = {}));
 //# sourceMappingURL=scene.js.map

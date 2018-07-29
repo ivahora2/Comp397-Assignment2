@@ -3,6 +3,7 @@ namespace objects {
       // member variables
      
       private _horizontalSpeed: number;
+      private _player:objects.Player;
   
       /**
        * Creates an instance of Cloud.
@@ -17,7 +18,7 @@ namespace objects {
       // private methods
       private _checkBounds(): void {
         // check bottom boundary
-        if (this.x < -this.width || this.y> config.Screen.HEIGHT + this.height) {
+        if (this.x > config.Screen.WIDTH ) {
           this.Reset();
         }
       }

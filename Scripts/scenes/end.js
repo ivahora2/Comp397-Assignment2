@@ -21,7 +21,7 @@ var scenes;
         // private methods
         // public methods
         End.prototype.Start = function () {
-            this._ocean = new objects.Ocean();
+            this._ocean = new objects.Background();
             this._gameOverLabel = new objects.Label("Game Over!", "80px", "Consolas", "#FFFF00", config.Screen.HALF_WIDTH, 160, true);
             this._restartButton = new objects.Button("RestartButton", config.Screen.HALF_WIDTH, 360, true);
             this.Main();
