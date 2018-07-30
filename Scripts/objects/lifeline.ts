@@ -1,3 +1,8 @@
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+ //Last Modified by Ishratben Vahora
+ //Date last Modified -- 2018-07-30
+ 
 namespace objects {
   export class Island extends objects.GameObject {
     // member variables

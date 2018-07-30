@@ -1,3 +1,7 @@
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+ //Last Modified by Ishratben Vahora
+ //Date last Modified -- 2018-07-30
 module objects {
     export class Button extends objects.GameObject {
         // member variables

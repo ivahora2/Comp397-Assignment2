@@ -8,6 +8,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+//Last Modified by Ishratben Vahora
+//Date last Modified -- 2018-07-30
 var scenes;
 (function (scenes) {
     var Play = /** @class */ (function (_super) {
@@ -30,6 +34,7 @@ var scenes;
             this.engineSound = createjs.Sound.play("engine");
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
+            this._exitButton = new objects.Button("ExitButton", 600, 30, true);
             this._player = new objects.Player();
             this._background = new objects.Background();
             this._island = new objects.Island();
@@ -37,8 +42,10 @@ var scenes;
             managers.Game.bulletManager = this._bulletManger;
             // creates an empty array of type Cloud
             this._enemy = new Array();
-            this._enemyNum = 3;
+            this._enemyNum = 7;
             this._buildClouds();
+            this._keyboardManager = new managers.Keyboard();
+            managers.Game.keyboardManager = this._keyboardManager;
             this.Main();
         };
         Play.prototype.Update = function () {
@@ -79,6 +86,7 @@ var scenes;
             }
             this.addChild(managers.Game.ScoreBoard.LivesLabel);
             this.addChild(managers.Game.ScoreBoard.ScoreLabel);
+            this.addChild(this._exitButton);
         };
         return Play;
     }(objects.Scene));

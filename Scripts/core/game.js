@@ -1,3 +1,7 @@
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+//Last Modified by Ishratben Vahora
+//Date last Modified -- 2018-07-30
 //IIFE -- Immediately Invoked Function Expression
 // also called self executing anonymous function
 (function () {
@@ -14,15 +18,15 @@
         { id: "intermediateButton", src: "/Assets/images/intermediate.png" },
         { id: "begginerButton", src: "/Assets/images/begginer.png" },
         { id: "restartButton", src: "/Assets/images/restart.png" },
-        { id: "begginerButton", src: "/Assets/images/begginer.png" },
+        { id: "backButton", src: "/Assets/images/back.png" },
         { id: "PlayButton", src: "/Assets/images/playButton.png" },
         { id: "StartButton", src: "/Assets/images/StartButton.png" },
         { id: "RestartButton", src: "/Assets/images/RestartButton.png" },
         { id: "player", src: "/Assets/images/minion.png" },
         { id: "background", src: "/Assets/images/background.jpg" },
-        { id: "lifeline", src: "/Assets/images/island.png" },
+        { id: "lifeline", src: "/Assets/images/banana.png" },
         { id: "Bullet", src: "/Assets/images/bullet.png" },
-        { id: "enemy", src: "/Assets/images/min_1.png" },
+        { id: "enemy", src: "/Assets/images/enemy.png" },
         { id: "yay", src: "/Assets/audio/yay.ogg" },
         { id: "thunder", src: "/Assets/audio/thunder.ogg" },
         { id: "engine", src: "/Assets/audio/engine.ogg" }

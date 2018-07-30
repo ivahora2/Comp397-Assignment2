@@ -8,6 +8,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+//Last Modified by Ishratben Vahora
+//Date last Modified -- 2018-07-30
 var scenes;
 (function (scenes) {
     var Start = /** @class */ (function (_super) {
@@ -22,9 +26,9 @@ var scenes;
         // public methods
         Start.prototype.Start = function () {
             this._ocean = new objects.Background();
-            this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Consolas", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
-            this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
-            this._startButton2 = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 400, true);
+            this._welcomeLabel = new objects.Label("Me..Me.Minion", "80px", "Consolas", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
+            this._startButton = new objects.Button("begginerButton", config.Screen.HALF_WIDTH, 360, true);
+            this._startButton2 = new objects.Button("intermediateButton", config.Screen.HALF_WIDTH, 400, true);
             this.Main();
         };
         Start.prototype.Update = function () {

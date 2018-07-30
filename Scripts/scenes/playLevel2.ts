@@ -1,3 +1,7 @@
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+ //Last Modified by Ishratben Vahora
+ //Date last Modified -- 2018-07-30
 module scenes {
     export class PLayLevelUp extends objects.Scene {
         // member variables
@@ -6,6 +10,7 @@ module scenes {
         private _island:objects.Island;
         private _enemy:objects.Enemy[];
         private _enemyNum:number;
+        private _exitButton:objects.Button;
         
         public engineSound:createjs.AbstractSoundInstance;
 
@@ -30,7 +35,7 @@ module scenes {
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
 
-
+            this._exitButton = new objects.Button("ExitButton",600,30,true);
             this._player = new objects.Player();
             this._background = new objects.Background();
             this._island = new objects.Island();
@@ -51,9 +56,9 @@ module scenes {
 
             managers.Collision.check(this._player, this._island);
 
-            this._enemy.forEach(cloud => {
-                cloud.Update();
-                managers.Collision.check(this._player, cloud);
+            this._enemy.forEach(enemy => {
+                enemy.Update();
+                managers.Collision.check(this._player, enemy);
             });
             
         }
@@ -86,6 +91,7 @@ module scenes {
 
             this.addChild(managers.Game.ScoreBoard.LivesLabel);
             this.addChild(managers.Game.ScoreBoard.ScoreLabel);
+            this.addChild(this._exitButton);
         }
     }
 }

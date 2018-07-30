@@ -1,3 +1,7 @@
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+ //Last Modified by Ishratben Vahora
+ //Date last Modified -- 2018-07-30
 module objects{
   export class Bullet extends objects.GameObject{
     
@@ -8,14 +12,14 @@ module objects{
     }
 
     public Start():void{
-      this._dx=10;
-      this._dy=0;
+      this._dx=0;
+      this._dy=-10;
       this.Reset();
 
     }
 
     public Update():void{
-      this.y += this._dx;
+      this.y += this._dy;
       this.CheckBounds();
     }
     public Reset():void{
@@ -27,7 +31,7 @@ module objects{
       
     }
     public CheckBounds():void{
-      if(this.x >= this.width){
+      if(this.y <= -this.height){
         this.Reset();
       }
     }

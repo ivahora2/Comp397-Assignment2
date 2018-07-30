@@ -8,6 +8,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+//Last Modified by Ishratben Vahora
+//Date last Modified -- 2018-07-30
 var scenes;
 (function (scenes) {
     var PLayLevelUp = /** @class */ (function (_super) {
@@ -30,6 +34,7 @@ var scenes;
             this.engineSound = createjs.Sound.play("engine");
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
+            this._exitButton = new objects.Button("ExitButton", 600, 30, true);
             this._player = new objects.Player();
             this._background = new objects.Background();
             this._island = new objects.Island();
@@ -45,9 +50,9 @@ var scenes;
             this._background.Update();
             this._island.Update();
             managers.Collision.check(this._player, this._island);
-            this._enemy.forEach(function (cloud) {
-                cloud.Update();
-                managers.Collision.check(_this._player, cloud);
+            this._enemy.forEach(function (enemy) {
+                enemy.Update();
+                managers.Collision.check(_this._player, enemy);
             });
         };
         PLayLevelUp.prototype.Reset = function () {
@@ -71,6 +76,7 @@ var scenes;
             }
             this.addChild(managers.Game.ScoreBoard.LivesLabel);
             this.addChild(managers.Game.ScoreBoard.ScoreLabel);
+            this.addChild(this._exitButton);
         };
         return PLayLevelUp;
     }(objects.Scene));

@@ -8,6 +8,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+//Last Modified by Ishratben Vahora
+//Date last Modified -- 2018-07-30
 var objects;
 (function (objects) {
     var Bullet = /** @class */ (function (_super) {
@@ -18,12 +22,12 @@ var objects;
             return _this;
         }
         Bullet.prototype.Start = function () {
-            this._dx = 10;
-            this._dy = 0;
+            this._dx = 0;
+            this._dy = -10;
             this.Reset();
         };
         Bullet.prototype.Update = function () {
-            this.y += this._dx;
+            this.y += this._dy;
             this.CheckBounds();
         };
         Bullet.prototype.Reset = function () {
@@ -33,7 +37,7 @@ var objects;
         Bullet.prototype.Maint = function () {
         };
         Bullet.prototype.CheckBounds = function () {
-            if (this.x >= this.width) {
+            if (this.y <= -this.height) {
                 this.Reset();
             }
         };

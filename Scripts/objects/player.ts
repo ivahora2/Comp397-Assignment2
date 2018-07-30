@@ -1,9 +1,16 @@
+//Source file name  
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+ //Last Modified by Ishratben Vahora
+ //Date last Modified -- 2018-07-30
+
 namespace objects {
     export class Player extends objects.GameObject {
         private _bulletSpawn: math.Vec2;
+        private _bullets:objects.Bullet;
         /**
          * Creates an instance of Plane.
-         * @memberof Plane
+         * @memberof Player
          */
         constructor() {
             super("player");
@@ -42,25 +49,9 @@ namespace objects {
 
         public BulletFire(): void {
             let ticker: number = createjs.Ticker.getTicks();
-            managers.Game.Stage.on('stagemousedown',function(){
-                this._bulletSpawn = new math.Vec2(this.x, this.y - this.height);
-                let currentBullet = managers.Game.bulletManager.CurrentBullet;
+            
 
-                let bullet = managers.Game.bulletManager.Bullets[currentBullet];
-                bullet.x = this._bulletSpawn.x;
-                bullet.y = this._bulletSpawn.y;
-
-                managers.Game.bulletManager.CurrentBullet++;
-
-                if (managers.Game.bulletManager.CurrentBullet > 49) {
-                    managers.Game.bulletManager.CurrentBullet = 0;
-                }
-
-                console.log("bulletFired");
-
-            },this);
-
-             if ((ticker % 10 == 0) && (managers.Game.keyboardManager.fire)) {
+            if ((ticker % 10 == 0) && (managers.Game.keyboardManager.fire)) {
                 this._bulletSpawn = new math.Vec2(this.x, this.y - this.height);
                 let currentBullet = managers.Game.bulletManager.CurrentBullet;
 

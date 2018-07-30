@@ -1,3 +1,7 @@
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+ //Last Modified by Ishratben Vahora
+ //Date last Modified -- 2018-07-30
 module scenes {
     export class End extends objects.Scene {
         // member variables
@@ -19,7 +23,7 @@ module scenes {
             this._ocean = new objects.Background();
 
             this._gameOverLabel = new objects.Label("Game Over!", "80px", "Consolas", "#FFFF00", config.Screen.HALF_WIDTH, 160, true);
-            this._restartButton = new objects.Button("RestartButton", config.Screen.HALF_WIDTH, 360, true);
+            this._restartButton = new objects.Button("restartButton", config.Screen.HALF_WIDTH, 360, true);
 
             this.Main();
         }

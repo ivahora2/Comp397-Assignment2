@@ -1,3 +1,7 @@
+//Author’s name--- Ishratben Vahora
+//Student Number-- 300986257
+ //Last Modified by Ishratben Vahora
+ //Date last Modified -- 2018-07-30
 module managers{
     export class Keyboard {
         
@@ -7,6 +11,8 @@ module managers{
   
 
         constructor() {
+            this.fire = false;
+            
             this.enabled = true;
 
             document.addEventListener('keydown', this.onKeyDown.bind(this), false);
