@@ -47,6 +47,18 @@ var objects;
         Player.prototype.Reset = function () { };
         Player.prototype.BulletFire = function () {
             var ticker = createjs.Ticker.getTicks();
+            managers.Game.Stage.on('stagemousedown', function () {
+                this._bulletSpawn = new math.Vec2(this.x, this.y - this.height);
+                var currentBullet = managers.Game.bulletManager.CurrentBullet;
+                var bullet = managers.Game.bulletManager.Bullets[currentBullet];
+                bullet.x = this._bulletSpawn.x;
+                bullet.y = this._bulletSpawn.y;
+                managers.Game.bulletManager.CurrentBullet++;
+                if (managers.Game.bulletManager.CurrentBullet > 49) {
+                    managers.Game.bulletManager.CurrentBullet = 0;
+                }
+                console.log("bulletFired");
+            }, this);
             if ((ticker % 10 == 0) && (managers.Game.keyboardManager.fire)) {
                 this._bulletSpawn = new math.Vec2(this.x, this.y - this.height);
                 var currentBullet = managers.Game.bulletManager.CurrentBullet;

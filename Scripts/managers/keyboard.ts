@@ -1,12 +1,10 @@
 module managers{
     export class Keyboard {
         
-        public fire: boolean = false;
+        public fire: boolean;
         public enabled: boolean;
-        if(fire = undefined)
-        {
-            console.log("undefined");
-        }
+
+  
 
         constructor() {
             this.enabled = true;
