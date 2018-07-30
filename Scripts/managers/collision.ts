@@ -22,12 +22,23 @@ namespace managers {
                 break;
 
                 case "enemy":
-                let thunderSound = createjs.Sound.play("thunder");
+                
+               
+                if(object1.name=="Bullet")
+                {
+                  managers.Game.ScoreBoard.Score += 200;
+                  
+                  object2.Reset();
+                }
+                else{
+                  let thunderSound = createjs.Sound.play("thunder");
                 thunderSound.volume = 0.2;
                 managers.Game.ScoreBoard.Lives -= 1;
-
+                }
                 
                 break;
+
+                
             }
 
         }

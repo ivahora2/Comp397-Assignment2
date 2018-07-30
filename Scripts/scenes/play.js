@@ -60,6 +60,12 @@ var scenes;
                 cloud.Update();
                 managers.Collision.check(_this._player, cloud);
             });
+            this._bulletManger.Bullets.forEach(function (bullets) {
+                bullets.Update();
+                _this._enemy.forEach(function (enemy) {
+                    managers.Collision.check(bullets, enemy);
+                });
+            });
         };
         Play.prototype.Reset = function () {
         };

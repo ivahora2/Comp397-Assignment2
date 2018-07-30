@@ -22,12 +22,12 @@ var objects;
             return _this;
         }
         Bullet.prototype.Start = function () {
-            this._dx = 0;
-            this._dy = -10;
+            this._dx = 10;
+            this._dy = 0;
             this.Reset();
         };
         Bullet.prototype.Update = function () {
-            this.y += this._dy;
+            this.x += this._dx;
             this.CheckBounds();
         };
         Bullet.prototype.Reset = function () {
@@ -37,7 +37,7 @@ var objects;
         Bullet.prototype.Maint = function () {
         };
         Bullet.prototype.CheckBounds = function () {
-            if (this.y <= -this.height) {
+            if (this.x >= 700) {
                 this.Reset();
             }
         };

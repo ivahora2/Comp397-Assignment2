@@ -72,6 +72,15 @@ module scenes {
                 managers.Collision.check(this._player, cloud);
             });
             
+
+           this._bulletManger.Bullets.forEach(bullets => {
+                bullets.Update();
+                this._enemy.forEach(enemy => {
+                
+                managers.Collision.check(bullets, enemy);
+
+                });
+            }); 
         }
 
         public Reset():void {

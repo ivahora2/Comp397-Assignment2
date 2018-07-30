@@ -12,14 +12,14 @@ module objects{
     }
 
     public Start():void{
-      this._dx=0;
-      this._dy=-10;
+      this._dx=10;
+      this._dy=0;
       this.Reset();
 
     }
 
     public Update():void{
-      this.y += this._dy;
+      this.x += this._dx;
       this.CheckBounds();
     }
     public Reset():void{
@@ -31,7 +31,7 @@ module objects{
       
     }
     public CheckBounds():void{
-      if(this.y <= -this.height){
+      if(this.x>= 700){
         this.Reset();
       }
     }

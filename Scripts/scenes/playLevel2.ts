@@ -11,6 +11,7 @@ module scenes {
         private _enemy:objects.Enemy[];
         private _enemyNum:number;
         private _exitButton:objects.Button;
+       
         
         public engineSound:createjs.AbstractSoundInstance;
 
@@ -60,6 +61,8 @@ module scenes {
                 enemy.Update();
                 managers.Collision.check(this._player, enemy);
             });
+
+            
             
         }
 
