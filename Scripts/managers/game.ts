@@ -5,5 +5,7 @@ module managers {
         public static CurrentState:config.Scene;
         public static Stage:createjs.Stage;
         public static ScoreBoard:managers.ScoreBoard;
+        public static bulletManager:managers.Bullet;
+        public static keyboardManager:managers.Keyboard;
     }
 }

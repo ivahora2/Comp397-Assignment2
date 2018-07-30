@@ -20,12 +20,15 @@ var objects;
         Bullet.prototype.Start = function () {
             this._dx = 10;
             this._dy = 0;
+            this.Reset();
         };
         Bullet.prototype.Update = function () {
             this.y += this._dx;
             this.CheckBounds();
         };
         Bullet.prototype.Reset = function () {
+            this.x = -5000;
+            this.y = -5000;
         };
         Bullet.prototype.Maint = function () {
         };

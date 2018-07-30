@@ -10,6 +10,7 @@ module objects{
     public Start():void{
       this._dx=10;
       this._dy=0;
+      this.Reset();
 
     }
 
@@ -18,6 +19,8 @@ module objects{
       this.CheckBounds();
     }
     public Reset():void{
+      this.x=-5000;
+      this.y= -5000;
       
     }
     public Maint():void{

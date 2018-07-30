@@ -10,6 +10,14 @@
     let ScoreBoard: managers.ScoreBoard;
 
     let Manifest = [
+        {id: "ExitButton", src:"/Assets/images/exit.png"},
+        {id: "infoButton", src:"/Assets/images/information.png"},
+        {id: "intermediateButton", src:"/Assets/images/intermediate.png"},
+        {id: "begginerButton", src:"/Assets/images/begginer.png"},
+        {id: "restartButton", src:"/Assets/images/restart.png"},
+        {id: "begginerButton", src:"/Assets/images/begginer.png"},
+
+        {id: "PlayButton", src:"/Assets/images/playButton.png"},
         {id: "StartButton", src:"/Assets/images/StartButton.png"},
         {id: "RestartButton", src:"/Assets/images/RestartButton.png"},
         {id: "player", src:"/Assets/images/minion.png"},

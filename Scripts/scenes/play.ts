@@ -6,6 +6,7 @@ module scenes {
         private _island:objects.Island;
         private _enemy:objects.Enemy[];
         private _enemyNum:number;
+        private _bulletManger:managers.Bullet;
         
         public engineSound:createjs.AbstractSoundInstance;
 
@@ -35,6 +36,8 @@ module scenes {
             this._background = new objects.Background();
             this._island = new objects.Island();
 
+            this._bulletManger = new managers.Bullet();
+            managers.Game.bulletManager = this._bulletManger;
             // creates an empty array of type Cloud
             this._enemy = new Array<objects.Enemy>();
             this._enemyNum = 3;
@@ -44,10 +47,14 @@ module scenes {
             this.Main();
         }
 
+
+
         public Update():void {
+            console.log("Num objects: " + this.numChildren);
             this._player.Update();
             this._background.Update();
             this._island.Update();
+            this._bulletManger.Update();
 
             managers.Collision.check(this._player, this._island);
 
@@ -78,6 +85,11 @@ module scenes {
 
             // adding the plane to the scene
             this.addChild(this._player);
+            this._bulletManger.Bullets.forEach(bullet => {  
+    this.addChild(bullet);
+            });
+
+            
 
             // adding the cloud to the scene
             for (const cloud of this._enemy) {

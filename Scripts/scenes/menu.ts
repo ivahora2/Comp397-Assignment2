@@ -21,7 +21,7 @@ module scenes {
             this._background = new objects.Background();
             this._infoButton = new objects.Button("StartButton",200,200,true);
             this._welcomeLabel = new objects.Label("Mail Pilot", "80px", "Consolas", "#FFFF00", config.Screen.HALF_WIDTH, config.Screen.HALF_HEIGHT, true);
-            this._startButton = new objects.Button("StartButton", config.Screen.HALF_WIDTH, 360, true);
+            this._startButton = new objects.Button("PlayButton", config.Screen.HALF_WIDTH, 360, true);
 
             this.Main();
         }

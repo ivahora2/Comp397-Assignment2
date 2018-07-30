@@ -33,6 +33,8 @@ var scenes;
             this._player = new objects.Player();
             this._background = new objects.Background();
             this._island = new objects.Island();
+            this._bulletManger = new managers.Bullet();
+            managers.Game.bulletManager = this._bulletManger;
             // creates an empty array of type Cloud
             this._enemy = new Array();
             this._enemyNum = 3;
@@ -41,9 +43,11 @@ var scenes;
         };
         Play.prototype.Update = function () {
             var _this = this;
+            console.log("Num objects: " + this.numChildren);
             this._player.Update();
             this._background.Update();
             this._island.Update();
+            this._bulletManger.Update();
             managers.Collision.check(this._player, this._island);
             this._enemy.forEach(function (cloud) {
                 cloud.Update();
@@ -57,6 +61,7 @@ var scenes;
             this.removeAllChildren();
         };
         Play.prototype.Main = function () {
+            var _this = this;
             console.log("Starting - PLAY SCENE");
             // adding the ocean to the scene
             this.addChild(this._background);
@@ -64,6 +69,9 @@ var scenes;
             this.addChild(this._island);
             // adding the plane to the scene
             this.addChild(this._player);
+            this._bulletManger.Bullets.forEach(function (bullet) {
+                _this.addChild(bullet);
+            });
             // adding the cloud to the scene
             for (var _i = 0, _a = this._enemy; _i < _a.length; _i++) {
                 var cloud = _a[_i];
