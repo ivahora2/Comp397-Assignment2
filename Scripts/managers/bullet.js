@@ -14,7 +14,7 @@ var managers;
             }
         };
         Bullet.prototype.Start = function () {
-            this._bulletCounts = 40;
+            this._bulletCounts = 400;
             this.Bullets = new Array();
             this._buildBulletPool();
             this.CurrentBullet = 0;

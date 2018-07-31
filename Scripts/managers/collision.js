@@ -10,7 +10,7 @@ var managers;
         Collision.check = function (object1, object2) {
             var P1 = new math.Vec2(object1.x, object1.y);
             var P2 = new math.Vec2(object2.x, object2.y);
-            if (math.Vec2.Distance(P1, P2) < object1.halfHeight + object2.halfHeight) {
+            if (math.Vec2.Distance(P1, P2) < object1.halfHeight + object2.halfHeight - 30) {
                 if (!object2.isColliding) {
                     object2.isColliding = true;
                     switch (object2.name) {

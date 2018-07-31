@@ -101,7 +101,7 @@ var managers;
             this.Reset();
         };
         ScoreBoard.prototype.Reset = function () {
-            this.Lives = 5;
+            this.Lives = 50;
             this.Score = 0;
         };
         return ScoreBoard;

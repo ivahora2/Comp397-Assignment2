@@ -100,7 +100,7 @@ module managers {
         }
 
         public Reset() {
-            this.Lives = 5;
+            this.Lives = 50;
             this.Score = 0;
         }
     }

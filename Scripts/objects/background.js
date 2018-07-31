@@ -34,7 +34,7 @@ var objects;
         };
         // public methods
         Background.prototype.Start = function () {
-            this._horizontalSpeed = -5; // 5 pixels per frame
+            this._horizontalSpeed = -3; // 5 pixels per frame
             this.Reset();
         };
         Background.prototype.Update = function () {

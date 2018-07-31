@@ -56,9 +56,9 @@ var scenes;
             this._island.Update();
             this._bulletManger.Update();
             managers.Collision.check(this._player, this._island);
-            this._enemy.forEach(function (cloud) {
-                cloud.Update();
-                managers.Collision.check(_this._player, cloud);
+            this._enemy.forEach(function (enemy) {
+                enemy.Update();
+                managers.Collision.check(_this._player, enemy);
             });
             this._bulletManger.Bullets.forEach(function (bullets) {
                 bullets.Update();

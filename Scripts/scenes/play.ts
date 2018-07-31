@@ -67,9 +67,9 @@ module scenes {
 
             managers.Collision.check(this._player, this._island);
 
-            this._enemy.forEach(cloud => {
-                cloud.Update();
-                managers.Collision.check(this._player, cloud);
+            this._enemy.forEach(enemy => {
+                enemy.Update();
+                managers.Collision.check(this._player, enemy);
             });
             
 
@@ -78,7 +78,7 @@ module scenes {
                 this._enemy.forEach(enemy => {
                 
                 managers.Collision.check(bullets, enemy);
-
+                
                 });
             }); 
         }

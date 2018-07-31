@@ -22,7 +22,7 @@ module managers{
     }
 
         public Start():void{
-            this._bulletCounts=40;
+            this._bulletCounts=400;
             this.Bullets = new Array<objects.Bullet>();
             this._buildBulletPool();
             this.CurrentBullet=0;
