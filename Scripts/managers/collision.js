@@ -20,15 +20,13 @@ var managers;
                             managers.Game.ScoreBoard.Score += 100;
                             break;
                         case "enemy":
-                            if (object1.name == "Bullet") {
-                                managers.Game.ScoreBoard.Score += 200;
-                                object2.Reset();
-                            }
-                            else {
-                                var thunderSound = createjs.Sound.play("thunder");
-                                thunderSound.volume = 0.2;
-                                managers.Game.ScoreBoard.Lives -= 1;
-                            }
+                            var thunderSound = createjs.Sound.play("thunder");
+                            thunderSound.volume = 0.2;
+                            managers.Game.ScoreBoard.Lives -= 1;
+                            break;
+                        case "Bullet":
+                            managers.Game.ScoreBoard.Score += 200;
+                            object1.Reset();
                             break;
                     }
                 }

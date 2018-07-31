@@ -11,6 +11,7 @@ namespace managers {
     ): void {
       let P1 = new math.Vec2(object1.x, object1.y);
       let P2 = new math.Vec2(object2.x, object2.y);
+      
 
       if (math.Vec2.Distance(P1, P2) < object1.halfHeight + object2.halfHeight - 30) {
         if (!object2.isColliding) {
@@ -24,18 +25,19 @@ namespace managers {
                 break;
 
                 case "enemy":
-                if(object1.name=="Bullet")
-                {
-                  managers.Game.ScoreBoard.Score += 200;
-                  object2.Reset();
-                }
-                else{
-                
+
+              
+               
                   let thunderSound = createjs.Sound.play("thunder");
                   thunderSound.volume = 0.2;
                   managers.Game.ScoreBoard.Lives -= 1;
-                }
                 
+                
+                break;
+
+                case "Bullet":
+                managers.Game.ScoreBoard.Score += 200;
+                object1.Reset();
                 break;
 
                 

@@ -13,6 +13,7 @@ module scenes {
         private _bulletManger:managers.Bullet;
         private _exitButton:objects.Button;
         private _keyboardManager:managers.Keyboard;
+        private _backButton:objects.Button;
         
         public engineSound:createjs.AbstractSoundInstance;
 
@@ -36,8 +37,8 @@ module scenes {
             this.engineSound = createjs.Sound.play("engine");
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
-
-            this._exitButton = new objects.Button("ExitButton",600,30,true);
+            this._backButton = new objects.Button("BackButton",600,30,true);
+            
             this._player = new objects.Player();
             this._background = new objects.Background();
             this._island = new objects.Island();
@@ -77,10 +78,12 @@ module scenes {
                 bullets.Update();
                 this._enemy.forEach(enemy => {
                 
-                managers.Collision.check(bullets, enemy);
+                managers.Collision.check(enemy,bullets);
                 
                 });
             }); 
+
+         
         }
 
         public Reset():void {
@@ -107,6 +110,9 @@ module scenes {
                 this.addChild(bullet);
             });
 
+            this._backButton.on("click", function(){
+                managers.Game.CurrentState = config.Scene.START;
+            }, this);
             
 
             // adding the cloud to the scene
@@ -116,7 +122,7 @@ module scenes {
 
             this.addChild(managers.Game.ScoreBoard.LivesLabel);
             this.addChild(managers.Game.ScoreBoard.ScoreLabel);
-            this.addChild(this._exitButton);
+            this.addChild(this._backButton);
         }
     }
 }

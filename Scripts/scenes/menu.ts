@@ -2,7 +2,7 @@
 //Student Number-- 300986257
  //Last Modified by Ishratben Vahora
  //Date last Modified -- 2018-07-30
-module scenes {
+ module scenes {
     export class Menu extends objects.Scene {
         // member variables
         private _welcomeLabel: objects.Label;

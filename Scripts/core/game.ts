@@ -21,7 +21,7 @@
         {id: "intermediateButton", src:"/Assets/images/intermediate.png"},
         {id: "begginerButton", src:"/Assets/images/begginer.png"},
         {id: "restartButton", src:"/Assets/images/restart.png"},
-        {id: "backButton", src:"/Assets/images/back.png"},
+        {id: "BackButton", src:"/Assets/images/back.png"},
         
 
         {id: "PlayButton", src:"/Assets/images/playButton.png"},
@@ -34,7 +34,7 @@
         {id: "enemy", src:"/Assets/images/enemy.png"},
         {id: "yay", src:"/Assets/audio/yay.ogg"},
         {id: "thunder", src:"/Assets/audio/thunder.ogg"},
-        {id: "engine", src:"/Assets/audio/engine.ogg"}
+        {id: "engine", src:"/Assets/audio/gameSound.mp3"}
     ]
 
 
@@ -97,7 +97,7 @@
             break;
 
             case config.Scene.LEVEL:
-            CurrentScene = new scenes.PLayLevelUp();
+            CurrentScene = new scenes.Play();
             break;
 
             case config.Scene.START:
@@ -105,7 +105,7 @@
             break;
 
             case config.Scene.PLAY:
-            CurrentScene = new scenes.Play();
+            CurrentScene = new scenes.PLayLevelUp();
             break;
 
             case config.Scene.END:

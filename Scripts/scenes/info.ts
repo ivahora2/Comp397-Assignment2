@@ -2,7 +2,7 @@
 //Student Number-- 300986257
  //Last Modified by Ishratben Vahora
  //Date last Modified -- 2018-07-30
-module scenes {
+ module scenes {
     export class Info extends objects.Scene {
         // member variables
         private _welcomeLabel: objects.Label;
@@ -28,7 +28,7 @@ module scenes {
         public Start():void {
             this._background = new objects.Background();
             this._infoButton = new objects.Button("infoButton",40,30,true);
-            this._backButton = new objects.Button("backButton",600,30,true);
+            this._backButton = new objects.Button("BackButton",600,30,true);
             this._welcomeLabel = new objects.Label("You are in the minion world", "40px", "Consolas", "#000", 300, 80, true);
             this._infoLabel = new objects.Label("Level1- You, You the yellow minion ", "20px", "Consolas", "#000", 300, 120, true);
             this._infoLabel1 = new objects.Label(" Save yourself from the purple minions by scrolling up and down using mouse ", "15px", "Consolas", "#000", 320, 140, true);

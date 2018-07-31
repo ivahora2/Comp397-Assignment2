@@ -34,7 +34,7 @@ var scenes;
             this.engineSound = createjs.Sound.play("engine");
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
-            this._exitButton = new objects.Button("ExitButton", 600, 30, true);
+            this._backButton = new objects.Button("BackButton", 600, 30, true);
             this._player = new objects.Player();
             this._background = new objects.Background();
             this._island = new objects.Island();
@@ -63,7 +63,7 @@ var scenes;
             this._bulletManger.Bullets.forEach(function (bullets) {
                 bullets.Update();
                 _this._enemy.forEach(function (enemy) {
-                    managers.Collision.check(bullets, enemy);
+                    managers.Collision.check(enemy, bullets);
                 });
             });
         };
@@ -85,6 +85,9 @@ var scenes;
             this._bulletManger.Bullets.forEach(function (bullet) {
                 _this.addChild(bullet);
             });
+            this._backButton.on("click", function () {
+                managers.Game.CurrentState = config.Scene.START;
+            }, this);
             // adding the cloud to the scene
             for (var _i = 0, _a = this._enemy; _i < _a.length; _i++) {
                 var cloud = _a[_i];
@@ -92,7 +95,7 @@ var scenes;
             }
             this.addChild(managers.Game.ScoreBoard.LivesLabel);
             this.addChild(managers.Game.ScoreBoard.ScoreLabel);
-            this.addChild(this._exitButton);
+            this.addChild(this._backButton);
         };
         return Play;
     }(objects.Scene));

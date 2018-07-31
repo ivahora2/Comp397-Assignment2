@@ -34,6 +34,7 @@ var scenes;
             this.engineSound = createjs.Sound.play("engine");
             this.engineSound.loop = -1;
             this.engineSound.volume = 0.1;
+            this._backButton = new objects.Button("BackButton", 600, 30, true);
             this._exitButton = new objects.Button("ExitButton", 600, 30, true);
             this._player = new objects.Player();
             this._background = new objects.Background();
@@ -74,9 +75,12 @@ var scenes;
                 var enemy = _a[_i];
                 this.addChild(enemy);
             }
+            this._backButton.on("click", function () {
+                managers.Game.CurrentState = config.Scene.START;
+            }, this);
             this.addChild(managers.Game.ScoreBoard.LivesLabel);
             this.addChild(managers.Game.ScoreBoard.ScoreLabel);
-            this.addChild(this._exitButton);
+            this.addChild(this._backButton);
         };
         return PLayLevelUp;
     }(objects.Scene));
